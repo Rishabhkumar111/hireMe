@@ -15,9 +15,10 @@ const RunningButton = ({ text, val }) => {
       20 +
       Math.random() * (window.innerHeight - (2 * val.height + 20)) -
       val.y;
+      
     setPosition({
       x: newX,
-      y: newY,
+      y: Math.min(newY, (window.innerHeight-(2 * val.height + 20)-val.y)),
     });
     count.current++;
   };
